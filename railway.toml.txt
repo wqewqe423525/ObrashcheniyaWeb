@@ -1,0 +1,8 @@
+[build]
+builder = "nixpacks"
+
+[build.nixpacksPlan.phases.build]
+cmds = ["dotnet publish -c Release -o out"]
+
+[deploy]
+startCommand = "dotnet out/ObrashcheniyaWeb.dll"
