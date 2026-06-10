@@ -27,7 +27,7 @@ try
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
         ?? throw new InvalidOperationException("Не задана строка подключения 'DefaultConnection'.");
     builder.Services.AddDbContext<AppDbContext>(options =>
-        options.UseSqlServer(connectionString, sql => sql.EnableRetryOnFailure()));
+        options.UseNpgsql(connectionString, sql => sql.EnableRetryOnFailure()));
 
     // ---------- Сервисы приложения ----------
     builder.Services.AddSingleton<IPasswordHasher, Pbkdf2PasswordHasher>();

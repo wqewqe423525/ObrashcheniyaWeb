@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andre\\Desktop\\ObrashcheniyaWeb\\src\\ObrashcheniyaWeb\\ObrashcheniyaWeb.csproj": {}
+    "C:\\Users\\andre\\Desktop\\web\\src\\сайт\\ObrashcheniyaWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andre\\Desktop\\ObrashcheniyaWeb\\src\\ObrashcheniyaWeb\\ObrashcheniyaWeb.csproj": {
+    "C:\\Users\\andre\\Desktop\\web\\src\\сайт\\ObrashcheniyaWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andre\\Desktop\\ObrashcheniyaWeb\\src\\ObrashcheniyaWeb\\ObrashcheniyaWeb.csproj",
+        "projectUniqueName": "C:\\Users\\andre\\Desktop\\web\\src\\сайт\\ObrashcheniyaWeb.csproj",
         "projectName": "ObrashcheniyaWeb",
-        "projectPath": "C:\\Users\\andre\\Desktop\\ObrashcheniyaWeb\\src\\ObrashcheniyaWeb\\ObrashcheniyaWeb.csproj",
+        "projectPath": "C:\\Users\\andre\\Desktop\\web\\src\\сайт\\ObrashcheniyaWeb.csproj",
         "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andre\\Desktop\\ObrashcheniyaWeb\\src\\ObrashcheniyaWeb\\obj\\",
+        "outputPath": "C:\\Users\\andre\\Desktop\\web\\src\\сайт\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,15 +43,29 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.6, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
               "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.4, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",

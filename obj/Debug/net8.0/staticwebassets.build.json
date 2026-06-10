@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zsDpwaRGXDOvGo6+y4neVN9pHAZldeY1Egsf1cusNhU=",
+  "Hash": "E1uPDwAT+CH8map60/7dWSFeqHao5bI14QGS2umxQf0=",
   "Source": "ObrashcheniyaWeb",
   "BasePath": "_content/ObrashcheniyaWeb",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "ObrashcheniyaWeb\\wwwroot",
       "Source": "ObrashcheniyaWeb",
-      "ContentRoot": "C:\\Users\\andre\\Desktop\\ObrashcheniyaWeb\\src\\ObrashcheniyaWeb\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\andre\\Desktop\\web\\src\\сайт\\wwwroot\\",
       "BasePath": "_content/ObrashcheniyaWeb",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\andre\\Desktop\\ObrashcheniyaWeb\\src\\ObrashcheniyaWeb\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\andre\\Desktop\\web\\src\\сайт\\wwwroot\\css\\site.css",
       "SourceId": "ObrashcheniyaWeb",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\andre\\Desktop\\ObrashcheniyaWeb\\src\\ObrashcheniyaWeb\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\andre\\Desktop\\web\\src\\сайт\\wwwroot\\",
       "BasePath": "_content/ObrashcheniyaWeb",
       "RelativePath": "css/site.css",
       "AssetKind": "All",

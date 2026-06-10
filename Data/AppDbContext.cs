@@ -28,7 +28,7 @@ public class AppDbContext : DbContext
         {
             e.ToTable("Статусы");
             e.HasKey(x => x.Id);
-            e.Property(x => x.Id).HasColumnName("ID_Статуса").UseIdentityColumn();
+            e.Property(x => x.Id).HasColumnName("ID_Статуса").ValueGeneratedOnAdd();
             e.Property(x => x.Name).HasColumnName("Название")
                 .HasMaxLength(50).IsRequired();
         });
@@ -38,7 +38,7 @@ public class AppDbContext : DbContext
         {
             e.ToTable("Типы_обращений");
             e.HasKey(x => x.Id);
-            e.Property(x => x.Id).HasColumnName("ID_Типа").UseIdentityColumn();
+            e.Property(x => x.Id).HasColumnName("ID_Типа").ValueGeneratedOnAdd();
             e.Property(x => x.Name).HasColumnName("Название")
                 .HasMaxLength(100).IsRequired();
             e.Property(x => x.Description).HasColumnName("Описание")
@@ -97,7 +97,7 @@ public class AppDbContext : DbContext
             e.Property(x => x.EmployeeId).HasColumnName("ID_Сотрудника").IsRequired();
             e.Property(x => x.SubmissionDate).HasColumnName("Дата_поступления")
                 .HasColumnType("date").IsRequired()
-                .HasDefaultValueSql("GETDATE()");
+                .HasDefaultValueSql("CURRENT_DATE");
             e.Property(x => x.CompletionDate).HasColumnName("Дата_исполнения")
                 .HasColumnType("date");
             e.Property(x => x.Description).HasColumnName("Описание")

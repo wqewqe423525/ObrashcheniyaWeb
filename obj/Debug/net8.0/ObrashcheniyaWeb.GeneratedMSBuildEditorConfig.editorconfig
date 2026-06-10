@@ -9,147 +9,147 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ObrashcheniyaWeb
 build_property.RootNamespace = ObrashcheniyaWeb
-build_property.ProjectDir = C:\Users\andre\Desktop\ObrashcheniyaWeb\src\ObrashcheniyaWeb\
+build_property.ProjectDir = C:\Users\andre\Desktop\web\src\сайт\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\andre\Desktop\ObrashcheniyaWeb\src\ObrashcheniyaWeb
+build_property.MSBuildProjectDirectory = C:\Users\andre\Desktop\web\src\сайт
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Account/AccessDenied.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Account/Login.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Appeals/ChangeStatus.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Appeals/ChangeStatus.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwZWFsc1xDaGFuZ2VTdGF0dXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Appeals/Create.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Appeals/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwZWFsc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Appeals/Delete.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Appeals/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwZWFsc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Appeals/Details.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Appeals/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwZWFsc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Appeals/Index.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Appeals/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwZWFsc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Appeals/Process.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Appeals/Process.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwZWFsc1xQcm9jZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Citizens/Create.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Citizens/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0aXplbnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Citizens/Delete.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Citizens/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0aXplbnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Citizens/Details.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Citizens/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0aXplbnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Citizens/Edit.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Citizens/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0aXplbnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Citizens/Index.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Citizens/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0aXplbnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Citizens/_Form.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Citizens/_Form.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0aXplbnNcX0Zvcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Employees/Create.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Employees/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Employees/Delete.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Employees/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Employees/Edit.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Employees/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Employees/Index.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Employees/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Employees/_Form.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Employees/_Form.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXF9Gb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Home/Index.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/RequestTypes/Create.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/RequestTypes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFR5cGVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/RequestTypes/Delete.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/RequestTypes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFR5cGVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/RequestTypes/Edit.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/RequestTypes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFR5cGVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/RequestTypes/Index.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/RequestTypes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFR5cGVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Shared/Error.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Shared/_Layout.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Shared/_StatusBadge.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Shared/_StatusBadge.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TdGF0dXNCYWRnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Statuses/Create.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Statuses/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdHVzZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Statuses/Delete.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Statuses/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdHVzZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Statuses/Edit.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Statuses/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdHVzZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/Statuses/Index.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/Statuses/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdHVzZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/_ViewImports.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/Desktop/ObrashcheniyaWeb/src/ObrashcheniyaWeb/Views/_ViewStart.cshtml]
+[C:/Users/andre/Desktop/web/src/сайт/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
