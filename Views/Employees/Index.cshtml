@@ -1,0 +1,50 @@
+@model List<Employee>
+@{
+    ViewData["Title"] = "Сотрудники";
+}
+
+<div class="page-head">
+    <div>
+        <p class="eyebrow">Администрирование</p>
+        <h1>Сотрудники</h1>
+        <p class="lead-sub">Учётные записи пользователей системы: @Model.Count</p>
+    </div>
+    <a asp-action="Create" class="btn btn-primary"><i class="bi bi-person-plus me-1"></i>Добавить сотрудника</a>
+</div>
+
+<div class="card table-card">
+    @if (Model.Count == 0)
+    {
+        <div class="empty-state"><div class="icon"><i class="bi bi-person-badge"></i></div><h5 class="mb-1">Нет сотрудников</h5></div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table align-middle mb-0">
+                <thead>
+                    <tr><th>ФИО</th><th>Должность</th><th>Логин</th><th>Роль</th><th class="text-end">Действия</th></tr>
+                </thead>
+                <tbody>
+                    @foreach (var e in Model)
+                    {
+                        var isAdmin = e.Role == Roles.Admin;
+                        <tr>
+                            <td class="fw-semibold">@e.FullName</td>
+                            <td class="text-muted-2">@(string.IsNullOrWhiteSpace(e.Position) ? "—" : e.Position)</td>
+                            <td><code>@e.Login</code></td>
+                            <td>
+                                <span class="role-badge @(isAdmin ? "role-admin" : "role-user")">
+                                    <i class="bi @(isAdmin ? "bi-shield-check" : "bi-person") me-1"></i>@e.Role
+                                </span>
+                            </td>
+                            <td class="text-end text-nowrap">
+                                <a asp-action="Edit" asp-route-id="@e.Id" class="btn btn-sm btn-outline-primary" title="Изменить"><i class="bi bi-pencil"></i></a>
+                                <a asp-action="Delete" asp-route-id="@e.Id" class="btn btn-sm btn-soft text-danger" title="Удалить"><i class="bi bi-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

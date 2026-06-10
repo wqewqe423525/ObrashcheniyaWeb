@@ -1,0 +1,190 @@
+@model DashboardViewModel
+@{
+    ViewData["Title"] = "Дашборд";
+    int maxType = Model.ByType.Count > 0 ? Model.ByType.Max(t => t.Count) : 0;
+    int maxEmp = Model.ByEmployee.Count > 0 ? Model.ByEmployee.Max(e => e.Count) : 0;
+}
+
+<div class="page-head">
+    <div>
+        <p class="eyebrow">Аналитика</p>
+        <h1>Сводная панель</h1>
+        <p class="lead-sub">Текущее состояние работы с обращениями граждан</p>
+    </div>
+    <a asp-controller="Appeals" asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-plus-lg me-1"></i>Новое обращение
+    </a>
+</div>
+
+<!-- KPI -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-lg-3">
+        <div class="stat-card is-primary">
+            <div class="stat-icon"><i class="bi bi-inbox"></i></div>
+            <div class="stat-label">Всего обращений</div>
+            <div class="stat-value">@Model.TotalAppeals</div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="stat-card">
+            <div class="stat-icon"><i class="bi bi-hourglass-split"></i></div>
+            <div class="stat-label">В работе</div>
+            <div class="stat-value">@Model.ActiveCount</div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="stat-card">
+            <div class="stat-icon"><i class="bi bi-people"></i></div>
+            <div class="stat-label">Граждан в базе</div>
+            <div class="stat-value">@Model.TotalCitizens</div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="stat-card">
+            <div class="stat-icon"><i class="bi bi-person-badge"></i></div>
+            <div class="stat-label">Сотрудников</div>
+            <div class="stat-value">@Model.TotalEmployees</div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- Левая колонка -->
+    <div class="col-lg-7">
+        <!-- Распределение по статусам -->
+        <div class="card mb-4">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <span><i class="bi bi-pie-chart me-2"></i>Обращения по статусам</span>
+                <span class="text-muted-2" style="font-size:.85rem;">Исполнено: @Model.CompletionRate%</span>
+            </div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-6 col-md-3">
+                        <div class="status-tile">
+                            <span class="dot" style="background:var(--st-registered);"></span>
+                            <div><div class="n">@Model.RegisteredCount</div><div class="t">Зарегистрировано</div></div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="status-tile">
+                            <span class="dot" style="background:var(--st-progress);"></span>
+                            <div><div class="n">@Model.InProgressCount</div><div class="t">В работе</div></div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="status-tile">
+                            <span class="dot" style="background:var(--st-done);"></span>
+                            <div><div class="n">@Model.CompletedCount</div><div class="t">Исполнено</div></div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="status-tile">
+                            <span class="dot" style="background:var(--st-rejected);"></span>
+                            <div><div class="n">@Model.RejectedCount</div><div class="t">Отказано</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                @if (Model.TotalAppeals > 0)
+                {
+                    <div class="mt-4">
+                        <div class="divider-label">Доля исполненных обращений</div>
+                        <div class="progress" role="progressbar" aria-valuenow="@Model.CompletionRate" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width:@Model.CompletionRate.ToString(System.Globalization.CultureInfo.InvariantCulture)%;background:var(--st-done);"></div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- По типам обращений -->
+        <div class="card">
+            <div class="card-header"><i class="bi bi-tags me-2"></i>По типам обращений</div>
+            <div class="card-body">
+                @if (Model.ByType.Count == 0)
+                {
+                    <div class="empty-state py-3"><div class="icon"><i class="bi bi-inbox"></i></div>Нет данных</div>
+                }
+                else
+                {
+                    @foreach (var t in Model.ByType)
+                    {
+                        var pct = maxType == 0 ? 0 : (int)Math.Round(t.Count * 100.0 / maxType);
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span style="font-size:.92rem;">@t.Name</span>
+                                <span class="fw-bold">@t.Count</span>
+                            </div>
+                            <div class="progress" style="height:8px;">
+                                <div class="progress-bar" style="width:@pct%;"></div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Правая колонка -->
+    <div class="col-lg-5">
+        <!-- Нагрузка сотрудников -->
+        <div class="card mb-4">
+            <div class="card-header"><i class="bi bi-person-workspace me-2"></i>Нагрузка по сотрудникам</div>
+            <div class="card-body">
+                @if (Model.ByEmployee.Count == 0)
+                {
+                    <div class="empty-state py-3"><div class="icon"><i class="bi bi-inbox"></i></div>Нет данных</div>
+                }
+                else
+                {
+                    @foreach (var e in Model.ByEmployee)
+                    {
+                        var pct = maxEmp == 0 ? 0 : (int)Math.Round(e.Count * 100.0 / maxEmp);
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span style="font-size:.92rem;">@e.Name</span>
+                                <span class="fw-bold">@e.Count</span>
+                            </div>
+                            <div class="progress" style="height:8px;">
+                                <div class="progress-bar" style="width:@pct%;background:var(--accent);"></div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+        <!-- Последние обращения -->
+        <div class="card">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <span><i class="bi bi-clock-history me-2"></i>Последние обращения</span>
+                <a asp-controller="Appeals" asp-action="Index" class="small">Все</a>
+            </div>
+            <div class="card-body p-0">
+                @if (Model.RecentAppeals.Count == 0)
+                {
+                    <div class="empty-state py-4"><div class="icon"><i class="bi bi-inbox"></i></div>Обращений пока нет</div>
+                }
+                else
+                {
+                    <ul class="list-group list-group-flush">
+                        @foreach (var a in Model.RecentAppeals)
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-start py-3" style="background:transparent;border-color:var(--line-soft);">
+                                <div class="me-2">
+                                    <a asp-controller="Appeals" asp-action="Details" asp-route-id="@a.Id" class="fw-semibold text-decoration-none">
+                                        @(a.Citizen?.ShortName ?? "—")
+                                    </a>
+                                    <div class="text-muted-2" style="font-size:.84rem;">
+                                        @(a.RequestType?.Name) &middot; @a.SubmissionDate.ToString("dd.MM.yyyy")
+                                    </div>
+                                </div>
+                                <partial name="_StatusBadge" model="a.Status" />
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+@model Employee
+@{
+    ViewData["Title"] = "Удаление сотрудника";
+    bool hasAppeals = ViewBag.HasAppeals ?? false;
+    var isAdmin = Model.Role == Roles.Admin;
+}
+
+<div class="page-head">
+    <div><p class="eyebrow">Подтверждение</p><h1>Удалить сотрудника?</h1></div>
+    <a asp-action="Index" class="btn btn-soft"><i class="bi bi-arrow-left me-1"></i>К списку</a>
+</div>
+
+<div class="row"><div class="col-lg-7">
+    <div class="card"><div class="card-body">
+        @if (hasAppeals)
+        {
+            <div class="alert alert-warning d-flex align-items-center">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                <div>За сотрудником закреплены обращения — удаление невозможно. Сначала переназначьте их другому ответственному.</div>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-danger d-flex align-items-center">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                <div>Действие необратимо. Учётная запись будет удалена.</div>
+            </div>
+        }
+
+        <dl class="row detail-list">
+            <dt class="col-sm-4">ФИО</dt>
+            <dd class="col-sm-8">@Model.FullName</dd>
+            <dt class="col-sm-4">Должность</dt>
+            <dd class="col-sm-8">@(string.IsNullOrWhiteSpace(Model.Position) ? "—" : Model.Position)</dd>
+            <dt class="col-sm-4">Логин</dt>
+            <dd class="col-sm-8"><code>@Model.Login</code></dd>
+            <dt class="col-sm-4">Роль</dt>
+            <dd class="col-sm-8 mb-0">
+                <span class="role-badge @(isAdmin ? "role-admin" : "role-user")">@Model.Role</span>
+            </dd>
+        </dl>
+
+        <div class="d-flex gap-2 mt-3">
+            @if (!hasAppeals)
+            {
+                <form asp-action="Delete" method="post" class="m-0">
+                    <input type="hidden" name="id" value="@Model.Id" />
+                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash me-1"></i>Удалить</button>
+                </form>
+            }
+            <a asp-action="Index" class="btn btn-soft">@(hasAppeals ? "Вернуться к списку" : "Отмена")</a>
+        </div>
+    </div></div>
+</div></div>

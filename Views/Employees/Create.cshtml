@@ -1,0 +1,25 @@
+@model EmployeeFormModel
+@{
+    ViewData["Title"] = "Новый сотрудник";
+    ViewData["IsEdit"] = false;
+}
+
+<div class="page-head">
+    <div><p class="eyebrow">Учётные записи</p><h1>Новый сотрудник</h1></div>
+    <a asp-action="Index" class="btn btn-soft"><i class="bi bi-arrow-left me-1"></i>К списку</a>
+</div>
+
+<div class="row"><div class="col-lg-9">
+    <div class="card"><div class="card-body">
+        <form asp-action="Create" method="post" novalidate>
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <partial name="_Form" model="Model" />
+            <div class="d-flex gap-2 mt-4">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-check-lg me-1"></i>Создать</button>
+                <a asp-action="Index" class="btn btn-soft">Отмена</a>
+            </div>
+        </form>
+    </div></div>
+</div></div>
+
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

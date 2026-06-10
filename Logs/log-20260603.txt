@@ -1,0 +1,363 @@
+2026-06-03 00:48:29.881 +03:00 [INF] DbInitializer Применение миграций базы данных...
+2026-06-03 00:48:45.911 +03:00 [FTL]  Приложение аварийно завершилось при запуске.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDatabaseCreator.<>c__DisplayClass20_0.<<ExistsAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDatabaseCreator.<>c__DisplayClass20_0.<<ExistsAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDatabaseCreator.<>c__DisplayClass20_0.<<ExistsAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Migrations.HistoryRepository.ExistsAsync(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator.MigrateAsync(String targetMigration, CancellationToken cancellationToken)
+   at ObrashcheniyaWeb.Data.DbInitializer.InitializeAsync(IServiceProvider services) in C:\Users\andre\Desktop\ObrashcheniyaWeb\src\ObrashcheniyaWeb\Data\DbInitializer.cs:line 24
+   at Program.<Main>$(String[] args) in C:\Users\andre\Desktop\ObrashcheniyaWeb\src\ObrashcheniyaWeb\Program.cs:line 94
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2026-06-03 00:59:36.659 +03:00 [INF] DbInitializer Применение миграций базы данных...
+2026-06-03 00:59:48.521 +03:00 [INF] DbInitializer Заполнение справочника статусов.
+2026-06-03 00:59:48.716 +03:00 [INF] DbInitializer Заполнение справочника типов обращений.
+2026-06-03 00:59:48.747 +03:00 [INF] DbInitializer Заполнение учётных записей сотрудников.
+2026-06-03 00:59:48.997 +03:00 [INF] DbInitializer Заполнение тестовых граждан.
+2026-06-03 00:59:49.048 +03:00 [INF] DbInitializer Заполнение тестовых обращений.
+2026-06-03 00:59:49.130 +03:00 [INF] DbInitializer Инициализация базы данных завершена.
+2026-06-03 01:05:33.312 +03:00 [INF] DbInitializer Применение миграций базы данных...
+2026-06-03 01:05:34.576 +03:00 [INF] DbInitializer Инициализация базы данных завершена.
+2026-06-03 01:06:51.411 +03:00 [WRN] Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware Failed to determine the https port for redirect.
+2026-06-03 01:06:51.476 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 302 in 59.4442 ms
+2026-06-03 01:06:51.648 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Account/Login responded 200 in 158.0772 ms
+2026-06-03 01:06:52.240 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /favicon.ico responded 302 in 6.4367 ms
+2026-06-03 01:06:52.258 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Account/Login responded 200 in 11.0603 ms
+2026-06-03 01:07:01.122 +03:00 [INF] ObrashcheniyaWeb.Controllers.AccountController Сотрудник Губарев А.Е. (администратор) вошёл в систему.
+2026-06-03 01:07:01.128 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Account/Login responded 302 in 239.8691 ms
+2026-06-03 01:07:01.482 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 345.3259 ms
+2026-06-03 01:07:01.749 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /favicon.ico responded 404 in 1.6408 ms
+2026-06-03 01:07:01.774 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Home/Error responded 404 in 12.6133 ms
+2026-06-03 01:07:09.254 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 114.1570 ms
+2026-06-03 01:07:10.120 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 86.1943 ms
+2026-06-03 01:07:10.880 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 11.1163 ms
+2026-06-03 01:07:11.545 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 39.5763 ms
+2026-06-03 01:07:42.417 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 30.7795 ms
+2026-06-03 01:07:48.187 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 5.5771 ms
+2026-06-03 01:07:48.827 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 4.2760 ms
+2026-06-03 01:07:50.065 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 12.2739 ms
+2026-06-03 01:08:03.414 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Create responded 200 in 48.4669 ms
+2026-06-03 01:08:08.495 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 3.9059 ms
+2026-06-03 01:08:09.873 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 4.5161 ms
+2026-06-03 01:08:10.562 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 4.1450 ms
+2026-06-03 01:08:11.111 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 20.2809 ms
+2026-06-03 01:08:12.325 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 14.8149 ms
+2026-06-03 01:08:13.133 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 10.3146 ms
+2026-06-03 01:08:17.763 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 14.6643 ms
+2026-06-03 01:08:19.207 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 3.7098 ms
+2026-06-03 01:08:19.875 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 3.1452 ms
+2026-06-03 01:08:20.290 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 4.0047 ms
+2026-06-03 01:08:20.715 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 4.3537 ms
+2026-06-03 01:08:21.164 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 11.3524 ms
+2026-06-03 01:08:22.023 +03:00 [INF] ObrashcheniyaWeb.Controllers.AccountController Сотрудник Губарев А.Е. вышел из системы.
+2026-06-03 01:08:22.025 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Account/Logout responded 302 in 11.3691 ms
+2026-06-03 01:08:22.033 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Account/Login responded 200 in 1.9979 ms
+2026-06-03 01:08:30.073 +03:00 [INF] ObrashcheniyaWeb.Controllers.AccountController Сотрудник Кузнецова А.С. (пользователь) вошёл в систему.
+2026-06-03 01:08:30.075 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Account/Login responded 302 in 84.1901 ms
+2026-06-03 01:08:30.093 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 11.3425 ms
+2026-06-03 01:08:34.140 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 8.2831 ms
+2026-06-03 01:08:35.879 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 10.4433 ms
+2026-06-03 01:08:46.888 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Create responded 200 in 9.4756 ms
+2026-06-03 01:08:48.058 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 11.7775 ms
+2026-06-03 01:08:49.631 +03:00 [INF] ObrashcheniyaWeb.Controllers.AccountController Сотрудник Кузнецова А.С. вышел из системы.
+2026-06-03 01:08:49.633 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Account/Logout responded 302 in 3.5916 ms
+2026-06-03 01:08:49.645 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Account/Login responded 200 in 1.4658 ms
+2026-06-03 01:09:02.248 +03:00 [INF] ObrashcheniyaWeb.Controllers.AccountController Сотрудник Губарев А.Е. (администратор) вошёл в систему.
+2026-06-03 01:09:02.249 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Account/Login responded 302 in 85.7792 ms
+2026-06-03 01:09:02.265 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 7.7057 ms
+2026-06-03 01:09:04.546 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 6.5230 ms
+2026-06-03 01:09:11.323 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 9.3111 ms
+2026-06-03 01:09:13.347 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 33.4237 ms
+2026-06-03 01:09:15.023 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 9.4567 ms
+2026-06-03 01:09:17.779 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 31.2418 ms
+2026-06-03 01:09:19.592 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 9.7601 ms
+2026-06-03 01:09:24.797 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Process/2 responded 200 in 148.3544 ms
+2026-06-03 01:09:41.051 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 3.2551 ms
+2026-06-03 01:09:45.186 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 3.1271 ms
+2026-06-03 01:09:47.071 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 4.8926 ms
+2026-06-03 01:09:48.806 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 2.8339 ms
+2026-06-03 01:09:52.217 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees/Create responded 200 in 43.4594 ms
+2026-06-03 01:09:54.608 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 2.8242 ms
+2026-06-03 01:10:03.738 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 2.6318 ms
+2026-06-03 01:10:05.140 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 2.4085 ms
+2026-06-03 01:10:06.974 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 2.6055 ms
+2026-06-03 01:10:07.465 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 7.0190 ms
+2026-06-03 01:10:07.842 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 13.5562 ms
+2026-06-03 01:10:08.244 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 11.7789 ms
+2026-06-03 01:10:10.991 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 8.4574 ms
+2026-06-03 01:10:11.681 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 2.5858 ms
+2026-06-03 01:10:35.911 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 13.7921 ms
+2026-06-03 01:10:36.693 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 10.6388 ms
+2026-06-03 01:10:37.199 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 3.4100 ms
+2026-06-03 01:10:37.756 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 2.6512 ms
+2026-06-03 01:10:38.301 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 2.5659 ms
+2026-06-03 01:10:38.738 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 4.8406 ms
+2026-06-03 01:10:39.824 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 10.2969 ms
+2026-06-03 01:15:18.412 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 188.6416 ms
+2026-06-03 01:15:25.755 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 6.0623 ms
+2026-06-03 01:15:26.456 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 10.4088 ms
+2026-06-03 01:15:27.533 +03:00 [INF] ObrashcheniyaWeb.Controllers.AccountController Сотрудник Губарев А.Е. вышел из системы.
+2026-06-03 01:15:27.540 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Account/Logout responded 302 in 7.8408 ms
+2026-06-03 01:15:27.547 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Account/Login responded 200 in 1.1312 ms
+2026-06-03 01:15:32.218 +03:00 [INF] ObrashcheniyaWeb.Controllers.AccountController Сотрудник Губарев А.Е. (администратор) вошёл в систему.
+2026-06-03 01:15:32.221 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Account/Login responded 302 in 89.0414 ms
+2026-06-03 01:15:32.256 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 30.6176 ms
+2026-06-03 01:15:42.888 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 5.7463 ms
+2026-06-03 01:15:46.900 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 6.5079 ms
+2026-06-03 01:15:55.788 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 18.4740 ms
+2026-06-03 01:16:08.693 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 6.5241 ms
+2026-06-03 01:16:09.243 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 2.2548 ms
+2026-06-03 01:16:09.927 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 3.9463 ms
+2026-06-03 01:16:10.815 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 2.1512 ms
+2026-06-03 01:16:11.623 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 2.9851 ms
+2026-06-03 01:16:12.665 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 7.8083 ms
+2026-06-03 01:16:13.540 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 12.3916 ms
+2026-06-03 01:16:38.264 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 6.3477 ms
+2026-06-03 01:16:57.989 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Details/5 responded 200 in 51.6429 ms
+2026-06-03 01:17:01.943 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens/Details/5 responded 200 in 64.8500 ms
+2026-06-03 01:17:06.833 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 2.4447 ms
+2026-06-03 01:17:10.126 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens/Details/2 responded 200 in 4.1959 ms
+2026-06-03 01:17:13.741 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 2.5215 ms
+2026-06-03 01:17:16.508 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes/Create responded 200 in 18.7866 ms
+2026-06-03 01:17:20.777 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 2.5559 ms
+2026-06-03 01:17:21.767 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 2.5063 ms
+2026-06-03 01:17:26.230 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees/Edit/1 responded 200 in 50.7338 ms
+2026-06-03 01:17:32.681 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 2.0997 ms
+2026-06-03 01:17:33.345 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 5.9294 ms
+2026-06-03 01:17:33.993 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 10.3737 ms
+2026-06-03 01:17:41.198 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 8.9548 ms
+2026-06-03 01:17:42.439 +03:00 [INF] ObrashcheniyaWeb.Controllers.AccountController Сотрудник Губарев А.Е. вышел из системы.
+2026-06-03 01:17:42.442 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Account/Logout responded 302 in 3.7062 ms
+2026-06-03 01:17:42.449 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Account/Login responded 200 in 0.9273 ms
+2026-06-03 01:17:48.480 +03:00 [INF] ObrashcheniyaWeb.Controllers.AccountController Сотрудник Губарев А.Е. (администратор) вошёл в систему.
+2026-06-03 01:17:48.482 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Account/Login responded 302 in 83.3693 ms
+2026-06-03 01:17:48.509 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 14.0353 ms
+2026-06-03 01:18:02.451 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 6.6978 ms
+2026-06-03 01:18:05.568 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 2.6080 ms
+2026-06-03 01:18:17.592 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 26.9590 ms
+2026-06-03 01:18:20.461 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 2.4900 ms
+2026-06-03 01:18:21.658 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens/Create responded 200 in 43.2927 ms
+2026-06-03 01:18:25.237 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 6.2706 ms
+2026-06-03 01:18:25.846 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 2.2982 ms
+2026-06-03 01:18:27.726 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 2.1413 ms
+2026-06-03 01:18:28.661 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 7.4767 ms
+2026-06-03 01:19:44.232 +03:00 [INF] ObrashcheniyaWeb.Controllers.AccountController Сотрудник Губарев А.Е. вышел из системы.
+2026-06-03 01:19:44.248 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Account/Logout responded 302 in 17.0450 ms
+2026-06-03 01:19:44.273 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Account/Login responded 200 in 1.4476 ms
+2026-06-03 01:19:55.866 +03:00 [WRN] ObrashcheniyaWeb.Controllers.AccountController Неудачная попытка входа с логином petrov.
+2026-06-03 01:19:55.873 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Account/Login responded 200 in 9.6886 ms
+2026-06-03 01:19:58.996 +03:00 [INF] ObrashcheniyaWeb.Controllers.AccountController Сотрудник Губарев А.Е. (администратор) вошёл в систему.
+2026-06-03 01:19:58.998 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Account/Login responded 302 in 85.7511 ms
+2026-06-03 01:19:59.020 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 12.9248 ms
+2026-06-03 01:20:00.995 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 2.2810 ms
+2026-06-03 01:20:03.123 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens/Details/1 responded 200 in 2.9466 ms
+2026-06-03 01:20:07.555 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 2.3859 ms
+2026-06-03 01:20:10.122 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens/Details/4 responded 200 in 2.6044 ms
+2026-06-03 01:20:14.841 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens/Edit/4 responded 200 in 29.7369 ms
+2026-06-03 01:20:17.559 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 2.4344 ms
+2026-06-03 01:20:18.705 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees/Create responded 200 in 5.8756 ms
+2026-06-03 01:20:19.658 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 2.5398 ms
+2026-06-03 01:20:20.271 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 5.1709 ms
+2026-06-03 01:20:20.773 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 4.3013 ms
+2026-06-03 01:20:21.215 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 2.2002 ms
+2026-06-03 01:20:22.143 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens/Create responded 200 in 1.7927 ms
+2026-06-03 01:20:24.758 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 9.6380 ms
+2026-06-03 01:20:26.089 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 6.7038 ms
+2026-06-03 01:51:13.078 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 82.6611 ms
+2026-06-03 01:51:13.955 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 12.2529 ms
+2026-06-03 01:54:46.683 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 33.1095 ms
+2026-06-03 01:54:52.159 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 23.9395 ms
+2026-06-03 01:54:54.236 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 28.3974 ms
+2026-06-03 01:54:54.990 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 4.0769 ms
+2026-06-03 01:54:55.613 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 7.7995 ms
+2026-06-03 01:54:57.137 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 7.5723 ms
+2026-06-03 01:54:57.609 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 5.1634 ms
+2026-06-03 01:54:59.828 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees/Edit/3 responded 200 in 7.9978 ms
+2026-06-03 01:55:08.893 +03:00 [INF] ObrashcheniyaWeb.Controllers.EmployeesController Изменена учётная запись ID 3.
+2026-06-03 01:55:08.898 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Employees/Edit/3 responded 302 in 122.6497 ms
+2026-06-03 01:55:08.906 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 2.7150 ms
+2026-06-03 01:55:10.919 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees/Edit/3 responded 200 in 2.7598 ms
+2026-06-03 01:55:12.783 +03:00 [INF] ObrashcheniyaWeb.Controllers.EmployeesController Изменена учётная запись ID 3.
+2026-06-03 01:55:12.785 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Employees/Edit/3 responded 302 in 11.8518 ms
+2026-06-03 01:55:12.796 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 4.5000 ms
+2026-06-03 01:55:15.425 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees/Edit/1 responded 200 in 3.5791 ms
+2026-06-03 01:55:17.316 +03:00 [INF] ObrashcheniyaWeb.Controllers.EmployeesController Изменена учётная запись ID 1.
+2026-06-03 01:55:17.319 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Employees/Edit/1 responded 302 in 11.5425 ms
+2026-06-03 01:55:17.333 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 1.9862 ms
+2026-06-03 01:55:18.885 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees/Edit/1 responded 200 in 2.9309 ms
+2026-06-03 01:55:20.476 +03:00 [INF] ObrashcheniyaWeb.Controllers.EmployeesController Изменена учётная запись ID 1.
+2026-06-03 01:55:20.483 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Employees/Edit/1 responded 302 in 11.0165 ms
+2026-06-03 01:55:20.491 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 2.0874 ms
+2026-06-03 01:55:23.975 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 2.2357 ms
+2026-06-03 01:55:24.542 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 2.1212 ms
+2026-06-03 01:55:25.217 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 17.7725 ms
+2026-06-03 01:55:26.575 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 2.2403 ms
+2026-06-03 01:55:27.316 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 8.5631 ms
+2026-06-03 01:55:28.676 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Details/5 responded 200 in 9.9819 ms
+2026-06-03 01:55:32.604 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens/Details/5 responded 200 in 15.3199 ms
+2026-06-03 01:55:34.781 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 10.0840 ms
+2026-06-03 01:55:40.164 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 8.1388 ms
+2026-06-03 01:55:42.459 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Details/4 responded 200 in 3.0368 ms
+2026-06-03 01:55:44.381 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/ChangeStatus/4 responded 200 in 56.7368 ms
+2026-06-03 01:55:50.591 +03:00 [INF] ObrashcheniyaWeb.Controllers.AppealsController Обращение №4: статус изменён на 1.
+2026-06-03 01:55:50.598 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Appeals/ChangeStatus/4 responded 302 in 56.3166 ms
+2026-06-03 01:55:50.608 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 4.3735 ms
+2026-06-03 01:55:52.572 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Details/4 responded 200 in 2.3449 ms
+2026-06-03 01:55:53.647 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/ChangeStatus/4 responded 200 in 11.8677 ms
+2026-06-03 01:55:55.997 +03:00 [INF] ObrashcheniyaWeb.Controllers.AppealsController Обращение №4: статус изменён на 2.
+2026-06-03 01:55:55.999 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Appeals/ChangeStatus/4 responded 302 in 9.5674 ms
+2026-06-03 01:55:56.009 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 4.5364 ms
+2026-06-03 01:55:59.788 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Details/4 responded 200 in 12.1873 ms
+2026-06-03 01:56:00.655 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/ChangeStatus/4 responded 200 in 14.1087 ms
+2026-06-03 01:56:03.434 +03:00 [INF] ObrashcheniyaWeb.Controllers.AppealsController Обращение №4: статус изменён на 4.
+2026-06-03 01:56:03.436 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Appeals/ChangeStatus/4 responded 302 in 12.1060 ms
+2026-06-03 01:56:03.458 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 15.5401 ms
+2026-06-03 01:56:07.299 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Details/4 responded 200 in 12.7785 ms
+2026-06-03 01:56:08.418 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/ChangeStatus/4 responded 200 in 9.3662 ms
+2026-06-03 01:56:11.064 +03:00 [INF] ObrashcheniyaWeb.Controllers.AppealsController Обращение №4: статус изменён на 2.
+2026-06-03 01:56:11.066 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Appeals/ChangeStatus/4 responded 302 in 10.4651 ms
+2026-06-03 01:56:11.078 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 5.7601 ms
+2026-06-03 01:56:17.258 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 17.3830 ms
+2026-06-03 01:56:18.730 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 8.0580 ms
+2026-06-03 01:56:20.219 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Create responded 200 in 7.0988 ms
+2026-06-03 01:56:25.841 +03:00 [INF] ObrashcheniyaWeb.Controllers.AppealsController Зарегистрировано обращение №6 сотрудником 3.
+2026-06-03 01:56:25.842 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Appeals/Create responded 302 in 83.5827 ms
+2026-06-03 01:56:25.856 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 4.2053 ms
+2026-06-03 01:56:32.732 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/ChangeStatus/6 responded 200 in 7.5143 ms
+2026-06-03 01:56:36.058 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Details/6 responded 200 in 2.6225 ms
+2026-06-03 01:56:42.045 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Process/6 responded 200 in 13.7305 ms
+2026-06-03 01:56:45.756 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 6.8528 ms
+2026-06-03 01:56:47.414 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Delete/6 responded 200 in 32.5057 ms
+2026-06-03 01:56:48.383 +03:00 [INF] ObrashcheniyaWeb.Controllers.AppealsController Обращение №6 удалено.
+2026-06-03 01:56:48.386 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Appeals/Delete/6 responded 302 in 30.3231 ms
+2026-06-03 01:56:48.400 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 7.9005 ms
+2026-06-03 01:56:49.888 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Create responded 200 in 3.4425 ms
+2026-06-03 01:56:55.899 +03:00 [INF] ObrashcheniyaWeb.Controllers.AppealsController Зарегистрировано обращение №7 сотрудником 3.
+2026-06-03 01:56:55.901 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Appeals/Create responded 302 in 11.1100 ms
+2026-06-03 01:56:55.915 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 7.4954 ms
+2026-06-03 01:57:02.064 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Delete/7 responded 200 in 6.3487 ms
+2026-06-03 01:57:03.232 +03:00 [INF] ObrashcheniyaWeb.Controllers.AppealsController Обращение №7 удалено.
+2026-06-03 01:57:03.234 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Appeals/Delete/7 responded 302 in 12.5395 ms
+2026-06-03 01:57:03.256 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 16.3068 ms
+2026-06-03 01:59:01.456 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 8.2499 ms
+2026-06-03 01:59:01.983 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 8.4698 ms
+2026-06-03 01:59:02.605 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 13.1086 ms
+2026-06-03 01:59:03.217 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 2.1821 ms
+2026-06-03 01:59:07.464 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes/Create responded 200 in 6.5039 ms
+2026-06-03 01:59:09.641 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 2.7064 ms
+2026-06-03 01:59:10.254 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 6.9727 ms
+2026-06-03 01:59:11.644 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 3.8844 ms
+2026-06-03 01:59:17.887 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees/Edit/2 responded 200 in 5.7866 ms
+2026-06-03 01:59:20.319 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 3.1629 ms
+2026-06-03 01:59:21.242 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 24.2898 ms
+2026-06-03 01:59:36.971 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.2088 ms
+2026-06-03 01:59:37.001 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Home/Error responded 404 in 2.0220 ms
+2026-06-03 01:59:48.565 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 17.1156 ms
+2026-06-03 01:59:49.204 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 4.5008 ms
+2026-06-03 01:59:50.083 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 7.9986 ms
+2026-06-03 01:59:51.520 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes/Create responded 200 in 1.5329 ms
+2026-06-03 01:59:52.886 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 7.3155 ms
+2026-06-03 01:59:56.158 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 5.3883 ms
+2026-06-03 01:59:56.555 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 2.4011 ms
+2026-06-03 01:59:57.396 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 2.5143 ms
+2026-06-03 01:59:59.371 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 7.3517 ms
+2026-06-03 02:00:06.857 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 9.3378 ms
+2026-06-03 02:00:08.886 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Details/4 responded 200 in 12.2674 ms
+2026-06-03 02:00:10.203 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/ChangeStatus/4 responded 200 in 9.3530 ms
+2026-06-03 02:00:14.300 +03:00 [INF] ObrashcheniyaWeb.Controllers.AppealsController Обращение №4: статус изменён на 3.
+2026-06-03 02:00:14.301 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Appeals/ChangeStatus/4 responded 302 in 12.2568 ms
+2026-06-03 02:00:14.316 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 8.6203 ms
+2026-06-03 02:00:15.607 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 8.4146 ms
+2026-06-03 02:00:17.441 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 5.6649 ms
+2026-06-03 02:00:19.405 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Process/4 responded 200 in 13.9785 ms
+2026-06-03 02:00:21.890 +03:00 [INF] ObrashcheniyaWeb.Controllers.AppealsController Обращение №4 обработано: ответственный 2, статус 2.
+2026-06-03 02:00:21.906 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Appeals/Process/4 responded 302 in 41.4027 ms
+2026-06-03 02:00:21.938 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 15.5209 ms
+2026-06-03 02:00:23.322 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 25.2264 ms
+2026-06-03 02:00:29.767 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 16.2660 ms
+2026-06-03 02:00:32.417 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 3.1049 ms
+2026-06-03 02:00:33.320 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 5.7567 ms
+2026-06-03 02:00:33.724 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 5.9383 ms
+2026-06-03 02:00:39.613 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 4.8181 ms
+2026-06-03 02:00:40.059 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 2.3876 ms
+2026-06-03 02:00:44.035 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 2.4229 ms
+2026-06-03 02:00:46.671 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 2.6069 ms
+2026-06-03 02:00:57.387 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 6.1492 ms
+2026-06-03 02:00:58.504 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 3.0090 ms
+2026-06-03 02:01:00.209 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 7.9892 ms
+2026-06-03 02:13:55.828 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 80.3945 ms
+2026-06-03 02:22:52.121 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 117.7011 ms
+2026-06-03 02:22:52.927 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 29.3941 ms
+2026-06-03 02:22:56.492 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 8.2746 ms
+2026-06-03 02:22:57.663 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 10.2027 ms
+2026-06-03 02:22:58.613 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 4.0492 ms
+2026-06-03 02:22:59.061 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 11.4894 ms
+2026-06-03 02:22:59.576 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 9.9238 ms
+2026-06-03 02:23:00.172 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 2.7590 ms
+2026-06-03 02:23:00.662 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 8.9445 ms
+2026-06-03 02:23:01.850 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 7.8474 ms
+2026-06-03 02:23:02.825 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 10.6758 ms
+2026-06-03 10:46:37.191 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 302 in 1.6652 ms
+2026-06-03 10:46:37.205 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Account/Login responded 200 in 3.2041 ms
+2026-06-03 10:46:39.230 +03:00 [INF] ObrashcheniyaWeb.Controllers.AccountController Сотрудник Губарев А.Е. (администратор) вошёл в систему.
+2026-06-03 10:46:39.233 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Account/Login responded 302 in 187.3089 ms
+2026-06-03 10:46:39.262 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 22.8918 ms
+2026-06-03 10:46:41.382 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 7.4335 ms
+2026-06-03 10:46:41.905 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 7.9731 ms
+2026-06-03 10:46:42.472 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 7.6178 ms
+2026-06-03 10:46:42.967 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 5.9039 ms
+2026-06-03 10:46:43.762 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 25.4567 ms
+2026-06-03 11:03:16.171 +03:00 [INF] ObrashcheniyaWeb.Controllers.AccountController Сотрудник Губарев А.Е. вышел из системы.
+2026-06-03 11:03:16.177 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Account/Logout responded 302 in 7.1221 ms
+2026-06-03 11:03:16.184 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Account/Login responded 200 in 1.1012 ms
+2026-06-03 11:04:49.644 +03:00 [INF] ObrashcheniyaWeb.Controllers.AccountController Сотрудник Губарев А.Е. (администратор) вошёл в систему.
+2026-06-03 11:04:49.646 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Account/Login responded 302 in 175.2932 ms
+2026-06-03 11:04:49.689 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 37.6229 ms
+2026-06-03 11:04:52.594 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 14.4038 ms
+2026-06-03 11:09:46.635 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 132.2547 ms
+2026-06-03 11:10:46.676 +03:00 [INF] ObrashcheniyaWeb.Controllers.AccountController Сотрудник Губарев А.Е. вышел из системы.
+2026-06-03 11:10:46.680 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Account/Logout responded 302 in 5.0905 ms
+2026-06-03 11:10:46.691 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Account/Login responded 200 in 4.0512 ms
+2026-06-03 11:11:43.091 +03:00 [INF] ObrashcheniyaWeb.Controllers.AccountController Сотрудник Губарев А.Е. (администратор) вошёл в систему.
+2026-06-03 11:11:43.093 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /Account/Login responded 302 in 86.1094 ms
+2026-06-03 11:11:43.127 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET / responded 200 in 28.1635 ms
+2026-06-03 11:11:45.049 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals responded 200 in 16.6625 ms
+2026-06-03 11:11:46.202 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Appeals/Create responded 200 in 6.1194 ms
+2026-06-03 11:12:25.352 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 5.9525 ms
+2026-06-03 11:12:25.912 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 9.1828 ms
+2026-06-03 11:12:27.879 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes/Create responded 200 in 1.9490 ms
+2026-06-03 11:12:41.943 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 4.8956 ms
+2026-06-03 11:12:51.836 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 6.4492 ms
+2026-06-03 11:12:54.142 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 2.7116 ms
+2026-06-03 11:28:24.606 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees responded 200 in 88.3231 ms
+2026-06-03 11:28:25.723 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Employees/Create responded 200 in 2.4281 ms
+2026-06-03 11:29:16.478 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 11.9241 ms
+2026-06-03 11:29:17.058 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Statuses responded 200 in 9.1674 ms
+2026-06-03 11:29:17.823 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /RequestTypes responded 200 in 2.2128 ms
+2026-06-03 11:29:20.315 +03:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /Citizens responded 200 in 4.2662 ms

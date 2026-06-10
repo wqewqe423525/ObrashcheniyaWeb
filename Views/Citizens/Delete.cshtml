@@ -1,0 +1,59 @@
+@model Citizen
+@{
+    ViewData["Title"] = "Удаление гражданина";
+    bool hasAppeals = ViewBag.HasAppeals ?? false;
+}
+
+<div class="page-head">
+    <div>
+        <p class="eyebrow">Подтверждение</p>
+        <h1>Удалить гражданина?</h1>
+    </div>
+    <a asp-action="Index" class="btn btn-soft"><i class="bi bi-arrow-left me-1"></i>К списку</a>
+</div>
+
+<div class="row">
+    <div class="col-lg-7">
+        <div class="card">
+            <div class="card-body">
+                @if (hasAppeals)
+                {
+                    <div class="alert alert-warning d-flex align-items-center">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        <div>
+                            У гражданина есть связанные обращения, поэтому удаление невозможно
+                            (нарушение ссылочной целостности). Сначала удалите или переназначьте его обращения.
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-danger d-flex align-items-center">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        <div>Действие необратимо. Запись будет удалена из справочника.</div>
+                    </div>
+                }
+
+                <dl class="row detail-list">
+                    <dt class="col-sm-4">ФИО</dt>
+                    <dd class="col-sm-8">@Model.FullName</dd>
+                    <dt class="col-sm-4">Дата рождения</dt>
+                    <dd class="col-sm-8">@(Model.BirthDate?.ToString("dd.MM.yyyy") ?? "—")</dd>
+                    <dt class="col-sm-4">Телефон</dt>
+                    <dd class="col-sm-8 mb-0">@(string.IsNullOrWhiteSpace(Model.Phone) ? "—" : Model.Phone)</dd>
+                </dl>
+
+                <div class="d-flex gap-2 mt-3">
+                    @if (!hasAppeals)
+                    {
+                        <form asp-action="Delete" method="post" class="m-0">
+                            <input type="hidden" name="id" value="@Model.Id" />
+                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash me-1"></i>Удалить</button>
+                        </form>
+                    }
+                    <a asp-action="Index" class="btn btn-soft">@(hasAppeals ? "Вернуться к списку" : "Отмена")</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

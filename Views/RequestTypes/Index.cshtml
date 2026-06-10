@@ -1,0 +1,46 @@
+@model List<RequestType>
+@{
+    ViewData["Title"] = "Типы обращений";
+    var counts = ViewBag.AppealCounts as Dictionary<int, int> ?? new();
+}
+
+<div class="page-head">
+    <div>
+        <p class="eyebrow">Справочник</p>
+        <h1>Типы обращений</h1>
+        <p class="lead-sub">Категории заявок граждан</p>
+    </div>
+    <a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-lg me-1"></i>Добавить тип</a>
+</div>
+
+<div class="card table-card">
+    @if (Model.Count == 0)
+    {
+        <div class="empty-state"><div class="icon"><i class="bi bi-tags"></i></div><h5 class="mb-1">Типы не заданы</h5></div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table align-middle mb-0">
+                <thead>
+                    <tr><th>Название</th><th>Описание</th><th>Обращений</th><th class="text-end">Действия</th></tr>
+                </thead>
+                <tbody>
+                    @foreach (var t in Model)
+                    {
+                        var n = counts.TryGetValue(t.Id, out var c) ? c : 0;
+                        <tr>
+                            <td class="fw-semibold">@t.Name</td>
+                            <td class="text-muted-2">@(string.IsNullOrWhiteSpace(t.Description) ? "—" : t.Description)</td>
+                            <td><span class="role-badge role-user">@n</span></td>
+                            <td class="text-end text-nowrap">
+                                <a asp-action="Edit" asp-route-id="@t.Id" class="btn btn-sm btn-outline-primary" title="Изменить"><i class="bi bi-pencil"></i></a>
+                                <a asp-action="Delete" asp-route-id="@t.Id" class="btn btn-sm btn-soft text-danger" title="Удалить"><i class="bi bi-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

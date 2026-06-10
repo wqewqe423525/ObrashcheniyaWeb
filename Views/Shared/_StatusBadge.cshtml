@@ -1,0 +1,7 @@
+@model ObrashcheniyaWeb.Models.Status
+@{
+    var cls = Model is null ? "" : $"st-{Model.Id}";
+}
+<span class="badge-status @cls">
+    <span class="dot"></span>@(Model?.Name ?? "—")
+</span>

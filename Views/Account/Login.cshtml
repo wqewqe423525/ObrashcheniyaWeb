@@ -1,0 +1,57 @@
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Вход в систему";
+    ViewData["FullScreen"] = true;
+}
+
+<div class="auth-wrap">
+    <div class="auth-card fade-in-up">
+        <div class="auth-head">
+            <div class="emblem"><i class="bi bi-bank2" style="font-size:1.7rem;"></i></div>
+            <h1>Система учёта обращений</h1>
+            <p>Комитет труда и социальной защиты населения<br />г. Ставрополь</p>
+        </div>
+        <div class="auth-body">
+            <form asp-action="Login" method="post" novalidate>
+                <input type="hidden" asp-for="ReturnUrl" />
+
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger py-2 px-3 mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Login" class="form-label"></label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-white"><i class="bi bi-person"></i></span>
+                        <input asp-for="Login" class="form-control" autocomplete="username"
+                               placeholder="Введите логин" autofocus />
+                    </div>
+                    <span asp-validation-for="Login" class="text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Password" class="form-label"></label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-white"><i class="bi bi-lock"></i></span>
+                        <input asp-for="Password" class="form-control" autocomplete="current-password"
+                               placeholder="Введите пароль" />
+                    </div>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 py-2">
+                    <i class="bi bi-box-arrow-in-right me-1"></i>Войти
+                </button>
+            </form>
+
+            <div class="cred-hint">
+                <i class="bi bi-info-circle me-1"></i>
+                <strong>Тестовые учётные записи:</strong><br />
+                Администратор — <code>admin</code> / <code>admin123</code><br />
+                Сотрудник — <code>staff1</code> / <code>123</code>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

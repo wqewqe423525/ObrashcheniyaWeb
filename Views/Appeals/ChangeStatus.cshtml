@@ -1,0 +1,66 @@
+@model ChangeStatusViewModel
+@{
+    ViewData["Title"] = "Изменение статуса";
+}
+
+<div class="page-head">
+    <div>
+        <p class="eyebrow">Обращение №@Model.AppealId</p>
+        <h1>Изменение статуса</h1>
+        <p class="lead-sub">Заявитель: @Model.CitizenName</p>
+    </div>
+    <a asp-action="Details" asp-route-id="@Model.AppealId" class="btn btn-soft">
+        <i class="bi bi-arrow-left me-1"></i>К обращению
+    </a>
+</div>
+
+<div class="row">
+    <div class="col-lg-7">
+        <div class="card">
+            <div class="card-body">
+                <p class="mb-4">
+                    Текущий статус:
+                    <span class="badge-status st-@(Model.StatusId)"><span class="dot"></span>@Model.CurrentStatus</span>
+                </p>
+
+                <form asp-action="ChangeStatus" method="post" novalidate>
+                    <input type="hidden" asp-for="AppealId" />
+                    <input type="hidden" asp-for="CitizenName" />
+                    <input type="hidden" asp-for="CurrentStatus" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="StatusId" class="form-label"></label>
+                        <select asp-for="StatusId" asp-items="Model.Statuses" class="form-select"></select>
+                        <span asp-validation-for="StatusId" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="CompletionDate" class="form-label"></label>
+                        <input asp-for="CompletionDate" class="form-control" type="date" />
+                        <div class="field-hint">Заполняется при переводе в статус «Исполнено» или «Отказано».</div>
+                        <span asp-validation-for="CompletionDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Result" class="form-label"></label>
+                        <textarea asp-for="Result" class="form-control" rows="4"
+                                  placeholder="Краткий итог рассмотрения обращения"></textarea>
+                        <span asp-validation-for="Result" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-check-lg me-1"></i>Сохранить
+                        </button>
+                        <a asp-action="Index" class="btn btn-soft">Отмена</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

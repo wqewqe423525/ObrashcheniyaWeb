@@ -1,0 +1,73 @@
+@model CreateAppealViewModel
+@{
+    ViewData["Title"] = "Новое обращение";
+}
+
+<div class="page-head">
+    <div>
+        <p class="eyebrow">Регистрация</p>
+        <h1>Новое обращение</h1>
+        <p class="lead-sub">Обращению будет присвоен статус «Зарегистрировано»</p>
+    </div>
+    <a asp-action="Index" class="btn btn-soft"><i class="bi bi-arrow-left me-1"></i>К списку</a>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-body">
+                <form asp-action="Create" method="post" novalidate>
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="CitizenId" class="form-label"></label>
+                        <select asp-for="CitizenId" asp-items="Model.Citizens" class="form-select">
+                            <option value="">— Выберите гражданина —</option>
+                        </select>
+                        <span asp-validation-for="CitizenId" class="text-danger"></span>
+                        <div class="field-hint">
+                            Нет нужного гражданина?
+                            <a asp-controller="Citizens" asp-action="Create">Добавить в базу</a>.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="RequestTypeId" class="form-label"></label>
+                        <select asp-for="RequestTypeId" asp-items="Model.RequestTypes" class="form-select">
+                            <option value="">— Выберите тип обращения —</option>
+                        </select>
+                        <span asp-validation-for="RequestTypeId" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Description" class="form-label"></label>
+                        <textarea asp-for="Description" class="form-control" rows="5"
+                                  placeholder="Изложите суть вопроса заявителя"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-check-lg me-1"></i>Зарегистрировать
+                        </button>
+                        <a asp-action="Index" class="btn btn-soft">Отмена</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header"><i class="bi bi-info-circle me-2"></i>Подсказка</div>
+            <div class="card-body text-muted-2" style="font-size:.92rem;">
+                <p>Дата поступления устанавливается автоматически — сегодняшним числом.</p>
+                <p>Ответственным назначается текущий сотрудник; администратор может переназначить его при обработке.</p>
+                <p class="mb-0">Дальнейшее движение обращения (в работу, исполнено, отказано) выполняется в разделе «Обработать».</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

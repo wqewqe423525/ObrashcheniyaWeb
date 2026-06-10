@@ -1,0 +1,46 @@
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "Ошибка";
+    var code = Model?.StatusCode ?? 500;
+    var heading = code switch
+    {
+        404 => "Страница не найдена",
+        403 => "Доступ запрещён",
+        _ => "Произошла ошибка"
+    };
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-7">
+        <div class="card text-center">
+            <div class="card-body p-5">
+                <div class="mb-3" style="font-size:3rem;color:var(--st-rejected);">
+                    <i class="bi bi-exclamation-octagon"></i>
+                </div>
+                <p class="eyebrow">Код @code</p>
+                <h1 class="mb-2">@heading</h1>
+                <p class="text-muted-2 mb-4">
+                    @(string.IsNullOrEmpty(Model?.Message)
+                        ? "При обработке запроса возникла непредвиденная ошибка. Попробуйте повторить операцию позже."
+                        : Model!.Message)
+                </p>
+
+                @if (Model?.ShowRequestId ?? false)
+                {
+                    <p class="field-hint mb-4">
+                        Идентификатор запроса: <code>@Model!.RequestId</code>
+                    </p>
+                }
+
+                <div class="d-flex justify-content-center gap-2">
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">
+                        <i class="bi bi-house me-1"></i>На главную
+                    </a>
+                    <a href="javascript:history.back()" class="btn btn-soft">
+                        <i class="bi bi-arrow-left me-1"></i>Назад
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

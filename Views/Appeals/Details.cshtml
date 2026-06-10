@@ -1,0 +1,111 @@
+@model Appeal
+@{
+    ViewData["Title"] = $"Обращение №{Model.Id}";
+    bool isAdmin = User.IsInRole(Roles.Admin);
+}
+
+<div class="page-head">
+    <div>
+        <p class="eyebrow">Карточка обращения</p>
+        <h1>Обращение №@Model.Id</h1>
+        <p class="lead-sub">Поступило @Model.SubmissionDate.ToString("dd MMMM yyyy 'г.'")</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a asp-action="Index" class="btn btn-soft"><i class="bi bi-arrow-left me-1"></i>К списку</a>
+        @if (isAdmin)
+        {
+            <a asp-action="Process" asp-route-id="@Model.Id" class="btn btn-primary">
+                <i class="bi bi-gear me-1"></i>Обработать
+            </a>
+        }
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-card-text me-2"></i>Сведения об обращении</span>
+                <partial name="_StatusBadge" model="Model.Status" />
+            </div>
+            <div class="card-body">
+                <dl class="row detail-list mb-0">
+                    <dt class="col-sm-4">Тип обращения</dt>
+                    <dd class="col-sm-8">@(Model.RequestType?.Name ?? "—")</dd>
+
+                    <dt class="col-sm-4">Дата поступления</dt>
+                    <dd class="col-sm-8">@Model.SubmissionDate.ToString("dd.MM.yyyy")</dd>
+
+                    <dt class="col-sm-4">Дата исполнения</dt>
+                    <dd class="col-sm-8">@(Model.CompletionDate?.ToString("dd.MM.yyyy") ?? "—")</dd>
+
+                    <dt class="col-sm-4">Ответственный</dt>
+                    <dd class="col-sm-8">@(Model.Employee?.FullName ?? "—")</dd>
+
+                    <dt class="col-sm-12">Описание</dt>
+                    <dd class="col-sm-12" style="white-space:pre-wrap;">@(string.IsNullOrWhiteSpace(Model.Description) ? "—" : Model.Description)</dd>
+
+                    <dt class="col-sm-12">Результат рассмотрения</dt>
+                    <dd class="col-sm-12 mb-0" style="white-space:pre-wrap;">@(string.IsNullOrWhiteSpace(Model.Result) ? "Ещё не заполнен" : Model.Result)</dd>
+                </dl>
+            </div>
+        </div>
+
+        @if (isAdmin)
+        {
+            <div class="d-flex gap-2">
+                <a asp-action="ChangeStatus" asp-route-id="@Model.Id" class="btn btn-soft">
+                    <i class="bi bi-flag me-1"></i>Изменить статус
+                </a>
+                <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-soft text-danger">
+                    <i class="bi bi-trash me-1"></i>Удалить
+                </a>
+            </div>
+        }
+    </div>
+
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header"><i class="bi bi-person me-2"></i>Заявитель</div>
+            <div class="card-body">
+                @if (Model.Citizen is not null)
+                {
+                    <h5 class="mb-2">@Model.Citizen.FullName</h5>
+                    <dl class="detail-list mb-0">
+                        @if (Model.Citizen.BirthDate.HasValue)
+                        {
+                            <dt>Дата рождения</dt>
+                            <dd>@Model.Citizen.BirthDate.Value.ToString("dd.MM.yyyy")</dd>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(Model.Citizen.Phone))
+                        {
+                            <dt>Телефон</dt>
+                            <dd>@Model.Citizen.Phone</dd>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(Model.Citizen.Email))
+                        {
+                            <dt>Email</dt>
+                            <dd>@Model.Citizen.Email</dd>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(Model.Citizen.Address))
+                        {
+                            <dt>Адрес</dt>
+                            <dd class="mb-0">@Model.Citizen.Address</dd>
+                        }
+                    </dl>
+                    @if (isAdmin)
+                    {
+                        <a asp-controller="Citizens" asp-action="Details" asp-route-id="@Model.Citizen.Id"
+                           class="btn btn-sm btn-soft mt-3 w-100">
+                            <i class="bi bi-box-arrow-up-right me-1"></i>Карточка гражданина
+                        </a>
+                    }
+                }
+                else
+                {
+                    <p class="text-muted-2 mb-0">Данные заявителя недоступны.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

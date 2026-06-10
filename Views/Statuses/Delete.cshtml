@@ -1,0 +1,42 @@
+@model Status
+@{
+    ViewData["Title"] = "Удаление статуса";
+    bool hasAppeals = ViewBag.HasAppeals ?? false;
+}
+
+<div class="page-head">
+    <div><p class="eyebrow">Подтверждение</p><h1>Удалить статус?</h1></div>
+    <a asp-action="Index" class="btn btn-soft"><i class="bi bi-arrow-left me-1"></i>К списку</a>
+</div>
+
+<div class="row"><div class="col-lg-6">
+    <div class="card"><div class="card-body">
+        @if (hasAppeals)
+        {
+            <div class="alert alert-warning d-flex align-items-center">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                <div>Существуют обращения с этим статусом — удаление невозможно.</div>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-danger d-flex align-items-center">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                <div>Действие необратимо. Статус будет удалён из справочника.</div>
+            </div>
+        }
+
+        <p class="mb-3">Статус: <partial name="_StatusBadge" model="Model" /></p>
+
+        <div class="d-flex gap-2">
+            @if (!hasAppeals)
+            {
+                <form asp-action="Delete" method="post" class="m-0">
+                    <input type="hidden" name="id" value="@Model.Id" />
+                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash me-1"></i>Удалить</button>
+                </form>
+            }
+            <a asp-action="Index" class="btn btn-soft">@(hasAppeals ? "Вернуться к списку" : "Отмена")</a>
+        </div>
+    </div></div>
+</div></div>

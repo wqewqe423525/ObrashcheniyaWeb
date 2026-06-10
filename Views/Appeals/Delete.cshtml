@@ -1,0 +1,44 @@
+@model Appeal
+@{
+    ViewData["Title"] = "Удаление обращения";
+}
+
+<div class="page-head">
+    <div>
+        <p class="eyebrow">Подтверждение</p>
+        <h1>Удалить обращение №@Model.Id?</h1>
+    </div>
+    <a asp-action="Index" class="btn btn-soft"><i class="bi bi-arrow-left me-1"></i>К списку</a>
+</div>
+
+<div class="row">
+    <div class="col-lg-7">
+        <div class="card">
+            <div class="card-body">
+                <div class="alert alert-danger d-flex align-items-center">
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                    <div>Действие необратимо. Обращение будет удалено из системы безвозвратно.</div>
+                </div>
+
+                <dl class="row detail-list">
+                    <dt class="col-sm-4">Заявитель</dt>
+                    <dd class="col-sm-8">@(Model.Citizen?.ShortName ?? "—")</dd>
+                    <dt class="col-sm-4">Тип обращения</dt>
+                    <dd class="col-sm-8">@(Model.RequestType?.Name ?? "—")</dd>
+                    <dt class="col-sm-4">Дата поступления</dt>
+                    <dd class="col-sm-8">@Model.SubmissionDate.ToString("dd.MM.yyyy")</dd>
+                    <dt class="col-sm-4">Статус</dt>
+                    <dd class="col-sm-8 mb-0"><partial name="_StatusBadge" model="Model.Status" /></dd>
+                </dl>
+
+                <form asp-action="Delete" method="post" class="d-flex gap-2 mt-3">
+                    <input type="hidden" name="id" value="@Model.Id" />
+                    <button type="submit" class="btn btn-danger">
+                        <i class="bi bi-trash me-1"></i>Удалить обращение
+                    </button>
+                    <a asp-action="Index" class="btn btn-soft">Отмена</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
