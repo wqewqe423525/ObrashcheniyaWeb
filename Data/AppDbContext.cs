@@ -101,9 +101,8 @@ public class AppDbContext : DbContext
             e.Property(x => x.CompletionDate).HasColumnName("Дата_исполнения")
                 .HasColumnType("date");
             e.Property(x => x.Description).HasColumnName("Описание")
-                .HasColumnType("nvarchar(max)");
             e.Property(x => x.Result).HasColumnName("Результат")
-                .HasColumnType("nvarchar(max)");
+                
 
             // Связи 1:N. Restrict — запрет удаления справочной записи при наличии
             // связанных обращений (ссылочная целостность, как в дипломе).
