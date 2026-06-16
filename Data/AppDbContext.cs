@@ -100,8 +100,8 @@ public class AppDbContext : DbContext
                 .HasDefaultValueSql("CURRENT_DATE");
             e.Property(x => x.CompletionDate).HasColumnName("Дата_исполнения")
                 .HasColumnType("date");
-            e.Property(x => x.Description).HasColumnName("Описание")
-            e.Property(x => x.Result).HasColumnName("Результат")
+            e.Property(x => x.Description).HasColumnName("Описание");
+            e.Property(x => x.Result).HasColumnName("Результат");
                 
 
             // Связи 1:N. Restrict — запрет удаления справочной записи при наличии
